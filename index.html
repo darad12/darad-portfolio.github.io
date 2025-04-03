@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: Arial, sans-serif; 
+        }
+        body { 
+            background: #f4f4f4; 
+            color: #333;
+        }
+        header { 
+            background: #333; 
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+            animation: fadeIn 2.5s ease-in-out; 
+        }
+        section {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s, transform 1s;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .projects div { 
+            background: white; 
+            padding: 15px; 
+            margin: 10px 0; 
+            border-radius: 5px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s; 
+        }
+        .projects div:hover { 
+            transform: scale(1.05); 
+        }
+        .contact a { 
+            display: block; 
+            margin: 10px 0; 
+            text-decoration: none; 
+            color: #007BFF; 
+            transition: color 0.3s; 
+        }
+        .contact a:hover { 
+            color: #0056b3; 
+        }
+        footer { 
+            text-align: center; 
+            padding: 20px; 
+            background: #333; 
+            color: white; 
+            margin-top: 20px; 
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="0ca0e682-a5c0-4e7a-8512-0e612d882d4c.webp" alt="My Image">
+        <h1>Nabbo Noushad Darad</h1>
+        <p>Web Developer | Web Designer | AI</p>
+    </header>
+    <section class="about">
+        <h2>About Me</h2>
+        <p>
+            Hi, I'm a passionate developer with a strong interest in AI, web development, and web design.
+            I enjoy solving complex problems and building innovative solutions that enhance user experience and security. I strive to create secure and efficient applications.
+        </p>
+        <p>
+            Whether it's developing AI-driven applications, designing sleek web interfaces, or improving system perfomance,
+            I am always eager to learn and apply new technologies. My goal is to combine creativity with technical expertise
+            to build impactful digital experiences.
+        </p>
+    </section>
+    <section class="skills">
+        <h2 style="margin-left: .5rem;">Skills</h2>
+        <ul style="margin-left: 1.5rem;">
+            <li>Python</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Laravel</li>
+            <li>Wordpress</li>
+            <li>ChatGPT</li>
+        </ul>
+    </section>
+    <section class="projects">
+        <h2>Featured Projects</h2>
+        <div>
+            <h3>DaradWebsite</h3>
+            <p>Our Commercial Website > <a href="https://www.daradwebsite.com">daradwebsite.com</a></p>
+        </div>
+        <div>
+            <h3>DaradShop</h3>
+            <p>Our Course Selling Website > <a href="https://www.daradshop.com">daradshop.com</a></p>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Contact</h2>
+        <a href="mailto:daradspecialdigitalservice@gmail.com">Email Me</a>
+    </section>
+    <footer>
+        <p>&copy; 2025 Nabbo Noushad Darad</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let sections = document.querySelectorAll("section");
+            let observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, { threshold: 0.3 });
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body>
+</html>
